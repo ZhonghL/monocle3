@@ -457,7 +457,7 @@ leiden_clustering <- function(data,
   igraph::V(g)$names <- as.character(igraph::V(g))
   out_result <- list(membership = best_result[['membership']],
                      modularity = best_result[['modularity']] )
-  names(out_result$membership) = cell_names
+  names(out_result$membership) = names(igraph::V(g))
 
   return(list(g = g, relations = relations, distMatrix = distMatrix,
               coord = coord, edge_links = edge_links, optim_res = out_result))
